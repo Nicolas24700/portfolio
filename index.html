@@ -4,30 +4,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Nicolas Molduch</title>
+    <title>Portfolio de Nicolas Molduch</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        :root {
+            --main-color: #000000;
+            --second-color: #ffffff;
+        }
+
+        /* =================== SKIP LINK  ET SR ONLY===============================================*/
+        .skip-link {
+            background-color: #fff;
+            border: solid 3px #000;
+            color: #000;
+            padding: 0.4em 0.5em;
+            text-decoration: none;
+        }
+
+        .skip-link:not(:focus):not(:active) {
+            border: 0;
+            clip: rect(0 0 0 0);
+            -webkit-clip-path: inset(100%);
+            clip-path: inset(100%);
+            height: 1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            white-space: nowrap;
+            width: 1px;
+        }
+
+        .skip-link:focus {
+            left: 0;
+            position: absolute;
+            top: 0;
+            z-index: 999;
+        }
+
+        .sr-only {
+            border: 0 !important;
+            clip: rect(1px, 1px, 1px, 1px) !important;
+            -webkit-clip-path: inset(50%) !important;
+            clip-path: inset(50%) !important;
+            height: 1px !important;
+            overflow: hidden !important;
+            padding: 0 !important;
+            position: absolute !important;
+            width: 1px !important;
+            white-space: nowrap !important;
+        }
+
+        /* ==================================== BARRE DE NAVIGATION ==================================== */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: var(--second-color);
+            padding: 15px;
+            border-radius: 16px;
+            /* Permet d'avoir une margin sur la longeur */
+            width: calc(100% - 60px);
+            margin: 30px;
+            position: fixed;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 40px;
+            font-size: 1rem;
+            list-style: none;
+            margin: 0;
+        }
+
+        nav a {
+            padding: 20px;
+            display: block;
+            text-decoration: none;
+            color: var(--main-color);
+            transition: all 0.5s ease;
+            border-radius: 16px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            background-color: var(--main-color);
+            color: var(--second-color);
+        }
+
+        /* BURGER MENU  */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+        }
+
+        .hamburger span {
+            width: 30px;
+            height: 3px;
+            background-color: var(--main-color);
+            transition: all 0.5s ease;
+        }
+
+        .hamburger.open span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* RESPONSIVE Tablette */
+        @media (min-width: 978px) and (max-width: 1144px) {
+            nav ul {
+                gap: 20px;
+            }
+
+            nav a {
+                font-size: 1rem;
+            }
+        }
+
+        /* RESPONSIVE Télephone */
+        @media (max-width: 990px) {
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 50%;
+                text-align: center;
+                margin-top: 20px;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                background-color: var(--second-color);
+                padding: 10px;
+                border-radius: 0 0 16px 16px;
+            }
+
+            nav ul.open {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            nav {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            nav a {
+                font-size: 1rem;
+            }
+        }
+
+        /* ========================================================================== */
+        header {
+            height: 100vh;
+            background-color: #cf0000;
+        }
+
+        .petite {
+            height: 100vh;
+            background-color: #001eff;
+        }
+
+        /* ===================================================================================== */
+        .toggle-wrapper {
+            position: relative;
+            width: 120px;
+            height: 60px;
+            background-color: var(--main-color);
+            border-radius: 999px;
+            margin: auto;
+            cursor: pointer;
+        }
+
+        .selector {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            background-color: var(--second-color);
+            transition: left 0.25s ease;
+            border-radius: 50%;
+        }
+
+        input.switch {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
     <header>
         <nav>
             <a href="#aboutme" class="skip-link">Aller au contenu</a>
-            <ul>
-                <li><a href="">Accueil</a></li>
-                <li><a href="">Projet</a></li>
-                <li><a href="">A propos</a></li>
-                <li><a href="">Contact</a></li>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="nav-links">
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Projets</a></li>
+                <li><a href="#">à propos</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
+            <!-- <a href="#" class="navbar-profile">
+                <span>Bienvenue, Anastasia</span>
+                <div class="profile-circle"></div>
+            </a> -->
+            <label for="toggle">
+                <input class="switch" type="checkbox" id="toggle">
+                <div class="toggle-wrapper">
+                    <span class="selector"></span>
+                </div>
+            </label>
         </nav>
     </header>
     <main>
         <section class="aboutme">
             <div>
                 <h3>développeur Full-Stack</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas repellendus ducimus quidem cupiditate ad aut quia! Minus, vel. Impedit facilis placeat magnam totam nobis laborum odit tenetur nihil, beatae tempore. Eius sequi, accusantium itaque deserunt quibusdam fugit aliquid, hic ratione cumque expedita repellat nam. Ea, exercitationem? Natus illo placeat iste!</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas repellendus ducimus quidem
+                    cupiditate ad aut quia! Minus, vel. Impedit facilis placeat magnam totam nobis laborum odit tenetur
+                    nihil, beatae tempore. Eius sequi, accusantium itaque deserunt quibusdam fugit aliquid, hic ratione
+                    cumque expedita repellat nam. Ea, exercitationem? Natus illo placeat iste!</p>
                 <button>Voir mon cv</button>
                 <button>Me contacter</button>
                 <div>
-                    <div><p>Mail : nicolasmolduchpro@gmail.com</p></div>
+                    <div>
+                        <p>Mail : nicolasmolduchpro@gmail.com</p>
+                    </div>
                     <div>
                         <a href="">linkdin</a>
                         <a href="">message</a>
@@ -50,9 +284,45 @@
 
         </section>
     </main>
-    <footer>
-        <p>&copy; 2024 Nicolas Molduch. Tous droits réservés.</p>
-    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Script de la barre de navigation 
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('nav-links');
+
+            // Ouvrir/fermer le menu latéral
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('open');
+                hamburger.classList.toggle('open');
+            });
+
+
+            // Script du bouton switch
+            document.getElementById('toggle').addEventListener('change', function () {
+                const toggleWrapper = document.querySelector('.toggle-wrapper');
+                const selector = document.querySelector('.selector');
+                const root = document.documentElement;
+
+                if (toggle.checked) {
+                    selector.style.left = 'calc(100% - 50px)';
+                    // Inverse les couleurs en changeant la couleur des variables CSS
+                    root.style.setProperty('--main-color', 'white');
+                    root.style.setProperty('--second-color', 'black');
+                    selector.style.backgroundColor = 'var(--second-color)';
+                    toggleWrapper.style.backgroundColor = 'var(--main-color)';
+                } else {
+                    toggleWrapper.style.backgroundColor = 'var(--main-color)';
+                    // Inverse les couleurs en changeant la couleur des variables CSS
+                    root.style.setProperty('--main-color', 'black');
+                    root.style.setProperty('--second-color', 'white');
+                    selector.style.left = '10px';
+                    selector.style.backgroundColor = 'var(--second-color)';
+                }
+            });
+
+        });
+    </script>
 </body>
 
 </html>
