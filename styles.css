@@ -1,0 +1,321 @@
+html {
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+:root {
+    --main-color: #000000;
+    --second-color: #ffffff;
+}
+
+/* =================== SKIP LINK  ET SR-ONLY===============================================*/
+.skip-link {
+    background-color: #fff;
+    border: solid 3px #000;
+    color: #000;
+    padding: 0.4em 0.5em;
+    text-decoration: none;
+}
+
+.skip-link:not(:focus):not(:active) {
+    border: 0;
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.skip-link:focus {
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 999;
+}
+
+.sr-only {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;
+}
+
+/* ==================================== BARRE DE NAVIGATION ==================================== */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--second-color);
+    padding: 10px;
+    border-radius: 16px;
+    /* Permet d'avoir une margin sur la longeur */
+    width: calc(100% - 60px);
+    margin: 30px;
+    position: fixed;
+}
+
+nav ul {
+    display: flex;
+    gap: 40px;
+    font-size: 1rem;
+    list-style: none;
+    margin: 0;
+}
+
+nav a {
+    padding: 20px;
+    display: block;
+    text-decoration: none;
+    color: var(--main-color);
+    transition: all 0.5s ease;
+    border-radius: 16px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    background-color: var(--main-color);
+    color: var(--second-color);
+}
+
+.active {
+    background-color: var(--main-color);
+    color: var(--second-color);
+}
+
+.numberprojet {
+    position: absolute;
+    top: 10px;
+    font-size: 0.9rem;
+    background-color: var(--main-color);
+    border-radius: 50px;
+    color: var(--second-color);
+    padding: 3px;
+}
+
+/* BURGER MENU  */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background-color: var(--main-color);
+    transition: all 0.5s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ===== SWITCH JOUR / NUIT ===================================================== */
+.toggle-wrapper {
+    position: relative;
+    width: 120px;
+    height: 60px;
+    background-color: var(--main-color);
+    border-radius: 50px;
+    margin: auto;
+    cursor: pointer;
+}
+
+.selector {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    background-color: var(--second-color);
+    transition: left 0.25s ease;
+    border-radius: 50px;
+}
+
+input.switch {
+    display: none;
+}
+
+.fa-sun {
+    display: none;
+    position: absolute;
+    top: 30%;
+    left: 12px;
+    color: var(--main-color)
+}
+
+.fa-moon {
+    position: absolute;
+    top: 30%;
+    left: 13px;
+    color: var(--main-color);
+}
+/* ==================================== HEADER ======================================================== */
+.header-div {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+    color: var(--second-color);
+  }
+
+  h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  .header-div p {
+    font-size: 2rem;
+  }
+
+  .header-buttons {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+  }
+
+  .buttons-apropos {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    color: var(--second-color);
+    background-color: var(--main-color);
+    border: 3px solid var(--second-color);
+    border-radius: 16px;
+    transition: all 0.5s ease;
+  }
+
+  .buttons-contact {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--main-color);
+    background-color: var(--second-color);
+    border-radius: 16px;
+    transition: background-color 0.3s;
+    transition: all 0.5s ease;
+  }
+  .buttons-contact:hover {
+      color: var(--second-color);
+      background-color: var(--main-color);
+      border: 3px solid var(--second-color);
+      transform: scale(1.05);
+  }
+  .buttons-apropos:hover {
+      color: var(--main-color);
+      background-color: var(--second-color);
+      transform: scale(1.1);
+  }
+
+  .fa-down-long {
+    font-size: 2rem;
+  }
+
+/* =============================== RESPONSIVE TABLETTE ====================================================================*/
+@media (min-width: 978px) and (max-width: 1144px) {
+    nav ul {
+        gap: 20px;
+    }
+
+    nav a {
+        font-size: 1rem;
+    }
+}
+
+/* =============================== RESPONSIVE TELEPHONE =========================================================*/
+@media (max-width: 990px) {
+
+    /* barre de navigation */
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 50%;
+        text-align: center;
+        margin-top: 20px;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        background-color: var(--second-color);
+        padding: 10px;
+        border-radius: 0 0 16px 16px;
+    }
+
+    nav ul.open {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav a {
+        font-size: 1rem;
+    }
+
+    .numberprojet {
+        top: 110px;
+    }
+
+    /* ============= header ============= */
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .header-div p {
+        font-size: 1rem;
+    }
+
+    .header-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-div a {
+        width: 100%;
+        max-width: 210px;
+        font-size: 1rem;
+    }
+}
