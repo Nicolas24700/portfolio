@@ -54,10 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+// Script du bouton me contacter de la page d'accueil ======================================================================
     const contactLink = document.querySelector('.buttons-contact');
     const arrowIcon = contactLink.querySelector('.fa-arrow-right');
 
-    contactLink.addEventListener('click', function (event) {
+    contactLink.addEventListener('click', function (event) {          
         event.preventDefault(); // Empêche la redirection immédiate
         arrowIcon.style.transform = 'translateX(-200px)'; // Animation vers la gauche
 
