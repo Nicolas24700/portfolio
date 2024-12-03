@@ -79,6 +79,7 @@ nav {
     width: calc(100% - 60px);
     margin: 30px;
     position: fixed;
+    z-index: 999;
 }
 
 nav ul {
@@ -252,7 +253,6 @@ input.switch {
     color: var(--main-color);
     background-color: var(--second-color);
     border-radius: 16px;
-    transition: background-color 0.3s;
     transition: all 0.5s ease;
   }
   .buttons-contact:hover {
@@ -278,6 +278,164 @@ input.switch {
     transition: transform 0.3s ease;
     position: relative;
 }
+/* ==================================== SECTION A PROPOS DE MOI ======================================================= */
+.aboutme {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.infoapropos {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    width: 90%;
+    max-width: 1200px;
+    gap: 20px;
+}
+
+.text-container {
+    flex: 1;
+    margin-right: 20px;
+    background-color: var(--main-color);
+    border-radius: 16px;
+    padding: 20px;
+    color: var(--second-color);
+    border: 3px solid var(--second-color);
+}
+
+h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+
+
+.text-container p {
+    font-size: 1rem;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    color: var(--second-color);
+}
+
+
+.infoapropos-bouttons {
+    padding: 10px 15px;
+    background-color: var(--second-color);
+    color:var(--main-color);
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.5s ease;
+    text-transform: uppercase;
+}
+
+.infoapropos-bouttons:hover {
+    background-color: var(--main-color);
+    color: var(--second-color);
+    border: 3px solid var(--second-color);
+}
+
+.contact-info {
+    margin-top: 10px;
+}
+
+.image-container {
+    flex: 0.4;
+    display: flex;
+    justify-content: center;
+    border-radius: 16px;
+}
+
+.image-container img {
+    width: 100%;
+    border-radius: 16px;
+    border: 3px solid var(--second-color);
+}
+
+.contact-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-links {
+    display: flex;
+    gap: 10px;
+    font-size: 2rem;
+}
+
+.contact-links a {
+    color: var(--second-color);
+    transition: all 0.5s ease;
+    border-radius: 16px;
+}
+
+.contact-links a:hover {
+    transform: scale(1.2);
+}
+
+/* =================================== SECTION COMPETENCES ====================================================== */
+.skills {
+    height: 100vh;
+    background-color: var(--main-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.skills-container {
+    display: flex;
+    margin-top: 50px;
+    margin-left: 150px;
+    margin-right: 150px;
+    
+}
+
+.icon-container {
+    border-bottom: 5px solid var(--second-color);
+    border-radius: 16px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+h4 {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    margin: 30px;
+    width: 20%;
+    text-transform: uppercase;
+    color: var(--second-color);
+}
+
+.iconeskills {
+    font-size: 4rem;
+    transition: all 0.5s ease ;
+}
+.iconeskills:hover {
+    transform: scale(1.1);
+}
+
+.icon p {
+    color: var(--second-color);
+    text-transform: uppercase;
+}
+
+.icon {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* =============================== RESPONSIVE TABLETTE ====================================================================*/
 @media (min-width: 978px) and (max-width: 1144px) {
     nav ul {
@@ -287,9 +445,41 @@ input.switch {
     nav a {
         font-size: 1rem;
     }
+    /* ===== Section Compétences ====== */
+    .icon {
+        width: 80px;
+    }
+
+    .iconeskills {
+        font-size: 3.5rem;
+    }
+    .icon-container {
+        overflow: auto;
+    }
 }
 
 /* =============================== RESPONSIVE TELEPHONE =========================================================*/
+/* @media (max-width: 768px) {
+    .infoapropos {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .text-container {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .image-container {
+        flex: none;
+        width: 100%;
+    }
+
+    .image-container img {
+        max-width: 80%;
+    }
+} */
 @media (max-width: 990px) {
 
     /* barre de navigation */
@@ -332,10 +522,11 @@ input.switch {
     /* ============= header ============= */
     h1 {
         font-size: 2.5rem;
+        text-align: center;
     }
 
-    .header-div p {
-        font-size: 1rem;
+    h2 {
+        font-size: 1.5rem;
     }
 
     .header-buttons {
@@ -347,5 +538,62 @@ input.switch {
         width: 100%;
         max-width: 210px;
         font-size: 1rem;
+    }
+    /* =============== Section à propos ============= */
+    /* .aboutme {
+        height: 100%;
+    }
+    .infoapropos {
+        flex-direction: column;
+        align-items: center;
+    }
+    .text-container {
+        margin-right: 0;
+        text-align: center;
+    }
+    .text-container p {
+        text-align: start;
+    }
+    h3 {
+        font-size: 1.3rem;
+        text-align: start;
+    }
+    .contact-line {
+        display: grid;
+    }
+    .contact-links {
+        display: block;
+        font-size: 3rem;
+    }
+    .image-container {
+        width: 100%;
+    } */
+     .text-container {
+        flex: 0.1;
+        height: 90%;
+     }
+     .image-container {
+        flex: 0.9;
+        height: 90%;
+     }
+
+     /* ====== SECTION COMPETENCE =============== */
+     .skills-container {
+        flex-direction: column;
+        margin: 50px;
+    }
+
+    .icon-container {
+        overflow: scroll;
+    }
+
+    h4 {
+        width: 100%;
+        margin: 10px;
+        justify-content: center;
+    }
+
+    .icon {
+        margin: 10px;
     }
 }
