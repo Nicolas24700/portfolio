@@ -15,6 +15,7 @@ body {
 :root {
     --main-color: #000000;
     --second-color: #ffffff;
+    --main-color-rgb: 52, 152, 219;
 }
 
 /* =================== SKIP LINK  ET SR-ONLY===============================================*/
@@ -446,6 +447,78 @@ h4 {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+/* ================================ SECTION COMMENTAIRE ================================================================== */
+.coms {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--main-color); 
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.coms-container {
+    background-color: var(--main-color);
+    gap: 5%;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.comment-container {
+    max-width: 350px;
+    transition: all 0.5s ease ;
+}
+.comment-container:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0px 10px rgba(var(--main-color-rgb), 0.5);
+    border-radius: 16px;
+}
+
+.comment-text-container {
+    display: flex;
+    align-items: stretch;
+    padding: 10px;
+    border: 2px solid var(--second-color);
+    border-radius: 16px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.quote,
+.quote-right {
+    display: flex;
+    flex: 0 0 50px;
+    font-size: 1.5rem;
+    color: var(--second-color);
+}
+
+.quote-comment {
+    flex: 1;
+    color: var(--second-color);
+}
+
+.quote-right {
+    justify-content: end;
+    align-items: end;
+}
+
+.comment-auteur {
+    color: var(--second-color);
+    text-align: end;
+    padding-right: 15px;
+    font-style: italic;
+}
+h5 {
+    font-size: 2rem;
+    color: var(--second-color);
+    margin: 0;
+    text-align: center;
+    margin-bottom: 15%; 
+}
+.fond-comment {
+    background-color: var(--second-color);
+    color: var(--main-color);
+    padding: 1px;
 }
 
 /* =============================== RESPONSIVE TABLETTE ====================================================================*/
