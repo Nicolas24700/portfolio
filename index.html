@@ -8,10 +8,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
     <link rel="stylesheet" href="styles.css">
     <style>
+        .maintenance {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(0, 0, 0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        .maintenance h1 {
+            font-size: 3rem;
+            color: rgb(255, 255, 255);
+        }
     </style>
 </head>
 
 <body>
+    <div class="maintenance">
+        <h1>Portfolio en cours de construction. Revenez bientôt ...</h1>
+    </div>
+    
     <div class="swipe" id="swipe"></div>
 
     <header>
@@ -24,7 +44,7 @@
             </button>
             <ul id="nav-links">
                 <li><a href="#" class="active">Accueil</a></li>
-                <li><a href="#">Projets <span class="numberprojet">10</span></a></li>
+                <li><a href="./projet.html">Projets <span class="numberprojet">10</span></a></li>
                 <li><a href="#Competences">Compétences</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
@@ -59,15 +79,15 @@
                         full stack.
                     </p>
                     <!-- METTRE L4APARITION DU I AU HOVER -->
-                    <a href="#" class="infoapropos-bouttons">Voir mon cv <i
+                    <a href="./fichiers/CV_Nicolas_Molduch.pdf" target="_blank" class="infoapropos-bouttons">Voir mon cv <i
                             class="fa-solid fa-up-right-from-square"></i></a>
                     <div class="contact-info">
                         <div class="contact-line">
                             <p>Mail : nicolasmolduchpro@gmail.com</p>
                             <div class="contact-links">
-                                <a href="" aria-label="lien linkedin"><i class="fa-brands fa-linkedin"></i></a>
-                                <a href="" aria-label="lien adresse-email"><i class="fa-solid fa-envelope"></i></a>
-                                <a href="" aria-label="lien github"><i class="fa-brands fa-square-github"></i></a>
+                                <a href="https://www.linkedin.com/in/nicolas-molduch-devweb/" target="_blank" aria-label="lien linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="mailto:nicolasmolduchpro@gmail.com" aria-label="lien adresse-email"><i class="fa-solid fa-envelope"></i></a>
+                                <a href="https://github.com/Nicolas24700" target="_blank" aria-label="lien github"><i class="fa-brands fa-square-github"></i></a>
                             </div>
                         </div>
                     </div>
@@ -199,7 +219,7 @@
             </div>
         </section>
     </main>
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 </body>
 
 </html>
