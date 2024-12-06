@@ -10,10 +10,11 @@ html {
 
 body {
     margin: 0;
+    background-color: var(--main-color);
 }
 
 :root {
-    --main-color: #000000;
+    --main-color: #0c0c0c;
     --second-color: #ffffff;
     --main-color-rgb: 52, 152, 219;
 }
@@ -220,13 +221,18 @@ input.switch {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--main-color);
     color: var(--second-color);
 }
 
 h1 {
     font-size: 4rem;
     margin-bottom: 1rem;
+}
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--second-color);
+    text-transform: uppercase;
 }
 
 .header-div p {
@@ -246,7 +252,6 @@ h1 {
     text-align: center;
     text-decoration: none;
     color: var(--second-color);
-    background-color: var(--main-color);
     border: 3px solid var(--second-color);
     border-radius: 16px;
     transition: all 0.5s ease;
@@ -291,7 +296,6 @@ h1 {
 .aboutme {
     width: 100%;
     height: 100vh;
-    background-color: var(--main-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -308,7 +312,6 @@ h1 {
 .text-container {
     flex: 1;
     margin-right: 20px;
-    background-color: var(--main-color);
     border-radius: 16px;
     padding: 20px;
     color: var(--second-color);
@@ -316,7 +319,7 @@ h1 {
 }
 
 h3 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 10px;
     text-transform: uppercase;
 }
@@ -396,7 +399,6 @@ h3 {
 /* =================================== SECTION COMPETENCES ====================================================== */
 .skills {
     height: 100vh;
-    background-color: var(--main-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -418,13 +420,11 @@ h3 {
     justify-content: space-around;
 }
 
-h4 {
-    font-size: 1.5rem;
+.skills h3 {
     display: flex;
     align-items: center;
     margin: 30px;
     width: 20%;
-    text-transform: uppercase;
     color: var(--second-color);
 }
 
@@ -448,17 +448,111 @@ h4 {
     flex-direction: column;
     align-items: center;
 }
+/* =============================== SECTION MON PARCOURS ========================================================= */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: var(--second-color);
+    top: 25px;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+.timeline-container {
+    padding: 10px 40px;
+    position: relative;
+    background: inherit;
+    width: 50%;
+}
+
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: var(--main-color);
+    border: 4px solid var(--second-color);
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+    box-sizing: content-box;
+}
+
+.timeline-left {
+    left: 0;
+}
+
+.timeline-right {
+    left: 50%;
+}
+
+.timeline-left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 31px;
+    border: medium solid var(--second-color);
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent var(--second-color);
+}
+
+.timeline-right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 31px;
+    border: medium solid var(--second-color);
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--second-color) transparent transparent;
+}
+
+.timeline-right::after {
+    left: -16px;
+}
+
+.content {
+    padding: 20px 30px;
+    color: var(--second-color);
+    position: relative;
+    border-radius: 8px;
+    border: 2px solid var(--second-color);
+    transition: all 0.5s ease;
+}
+
+.content:hover {
+    box-shadow: 0 0px 10px rgba(var(--main-color-rgb), 1);
+}
+
+.parcours {
+    background-color: var(--main-color);
+} 
+
+
 /* ================================ SECTION COMMENTAIRE ================================================================== */
 .coms {
     height: 100vh;
     width: 100%;
-    background-color: var(--main-color); 
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
+
 .coms-container {
-    background-color: var(--main-color);
     gap: 5%;
     justify-content: center;
     display: flex;
@@ -467,8 +561,9 @@ h4 {
 
 .comment-container {
     max-width: 350px;
-    transition: all 0.5s ease ;
+    transition: all 0.5s ease;
 }
+
 .comment-container:hover {
     transform: scale(1.1);
     box-shadow: 0 0px 10px rgba(var(--main-color-rgb), 0.5);
@@ -481,7 +576,6 @@ h4 {
     padding: 10px;
     border: 2px solid var(--second-color);
     border-radius: 16px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 .quote,
@@ -508,13 +602,12 @@ h4 {
     padding-right: 15px;
     font-style: italic;
 }
-h5 {
-    font-size: 2rem;
-    color: var(--second-color);
+
+.coms h2 {
     margin: 0;
-    text-align: center;
-    margin-bottom: 15%; 
+    margin-bottom: 15%;
 }
+
 .fond-comment {
     background-color: var(--second-color);
     color: var(--main-color);
@@ -665,7 +758,7 @@ h5 {
         overflow: scroll;
     }
 
-    h4 {
+    .skills h3 {
         width: 100%;
         margin: 10px;
         justify-content: center;
@@ -674,6 +767,7 @@ h5 {
     .icon {
         margin: 10px;
     }
+
     .skills {
         height: 100%;
     }
@@ -688,5 +782,32 @@ h5 {
 
     .skills {
         height: 100%;
+    }
+
+    /* ==== Section mon parcours==== */
+    .timeline::after {
+        left: 31px;
+    }
+
+    .timeline-container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .timeline-container::before {
+        left: 61px;
+        border: medium solid var(--second-color);
+        border-width: 10px 10px 10px 0;
+        border-color: transparent var(--second-color) transparent transparent;
+    }
+
+    .timeline-left::after,
+    .timeline-right::after {
+        left: 15px;
+    }
+
+    .timeline-right {
+        left: 0%;
     }
 }
