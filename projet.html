@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les projets</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="swipe" id="swipe"></div>
+
+    <header class="header-projet">
+        <nav>
+            <a href="#lesprojets" class="skip-link">Aller au contenu</a>
+            <button class="hamburger" id="hamburger" aria-label="Menu de navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="nav-links">
+                <li><a href="./index.html">Accueil</a></li>
+                <li><a href="" class="active">Projets <span class="numberprojet">10</span></a></li>
+                <li><a href="./index.html#Competences">Compétences</a></li>
+            </ul>
+            <label for="toggle">
+                <input class="switch" type="checkbox" id="toggle">
+                <div class="toggle-wrapper">
+                    <span class="selector"><i class="fa-solid fa-sun"></i><i class="fa-solid fa-moon"></i></span>
+                </div>
+            </label>
+        </nav>
+    </header>
+    <h1 class="h1-projets">Mes projets :</h1>
+    <section class="allprojets" id="lesprojets">
+        <div class="projet-container">
+            <h2>Golden Resort Hotel</h2>
+            <div class="container">
+                <img src="/profil default.png" alt="Architecture Image" class="image-projet">
+                <div class="text-section">
+                    <p>Date : 12/12/1200</p>
+                    <div class="language-tag">
+                        <div class="tags">
+                            <p>HTML</p>
+                        </div>
+                        <div class="tags">
+                            <p>CSS</p>
+                        </div>
+                        <div class="tags">
+                            <p>JavaScript</p>
+                        </div>
+                        <div class="tags">
+                            <p>PHP</p>
+                        </div>
+                        <div class="tags">
+                            <p>MySQL</p>
+                        </div>
+                    </div>
+                    <p>
+                        Dans le cadre de mon BUT MMI, j’ai développé Golden Resort Hotel, un site de réservation
+                        d’hôtels doté d’un moteur de recherche, d’un système de réservation avec confirmation par email,
+                        d’un calculateur de prix, d’un système d’avis et de tri des chambres.
+                    </p>
+                    <p><strong>Compétences développées :</strong> gestion des bases de données, création de systèmes
+                        interactifs (réservation, commentaires, notation), envoi automatisé d’emails.</p>
+                    <p><strong>Réalisation : </strong>seul</p>
+                    <p><strong>Contexte :</strong> scolaire</p>
+                    <a href="" class="projet-link">Lien du projet <i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./script.js"></script>
+</body>
+
+</html>

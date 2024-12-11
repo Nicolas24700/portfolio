@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
     <link rel="stylesheet" href="styles.css">
     <style>
-         .maintenance {
+         /* .maintenance {
             position: fixed;
             top: 0;
             left: 0;
@@ -23,14 +23,14 @@
         .maintenance h1 {
             font-size: 3rem;
             color: rgb(255, 255, 255);
-        } 
+        }  */
     </style>
 </head>
 
 <body>
-     <div class="maintenance">
+     <!-- <div class="maintenance">
         <h1>Portfolio en cours de construction. Revenez bientôt ...</h1>
-    </div> 
+    </div>  -->
     
     <div class="swipe" id="swipe"></div>
 
@@ -46,7 +46,6 @@
                 <li><a href="#" class="active">Accueil</a></li>
                 <li><a href="./projet.html">Projets <span class="numberprojet">10</span></a></li>
                 <li><a href="#Competences">Compétences</a></li>
-                <li><a href="#">Contact</a></li>
             </ul>
             <label for="toggle">
                 <input class="switch" type="checkbox" id="toggle">
@@ -57,11 +56,10 @@
         </nav>
         <div class="header-div" id="header-website">
             <!-- animations du bas vers le bas ou ça place chaque lettre un par un avec ducoup une animation -->
-            <h1>Nicolas Molduch</h1>
-            <h2>Développeur Full-Stack</h2>
+            <h1 class="h1-accueil">Nicolas Molduch</h1>
+            <h2 class="h2-accueil">Développeur Full-Stack</h2>
             <div class="header-buttons">
-                <a href="#aboutme" class="buttons-apropos">à propos</a>
-                <a href="#contact" class="buttons-contact">Me Contacter <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#aboutme" class="buttons-apropos">à propos <i class="fa-solid fa-arrow-right"></i></a>
             </div>
             <i class="fa-solid fa-angles-down"></i>
         </div>
@@ -99,7 +97,7 @@
         </section>
 
         <section class="skills" id="Competences">
-            <h2>Mes compétences</h2>
+            <h2 class="h2-accueil">Mes compétences</h2>
             <div class="skills-container">
                 <h3>Front-End :</h3>
                 <div class="icon-container">
@@ -173,7 +171,7 @@
             </div>
         </section>
         <section class="parcours">
-            <h2>Mon Parcours</h2>
+            <h2 class="h2-accueil">Mon Parcours</h2>
             <div class="timeline">
               <div class="timeline-container timeline-left">
                 <div class="content">
@@ -218,7 +216,7 @@
 
         </section>
         <section class="coms">
-            <h2>Les témoignages</h2>
+            <h2 class="h2-accueil">Les témoignages</h2>
             <div class="coms-container">
                 <div class="comment-container">
                     <div class="comment-text-container">

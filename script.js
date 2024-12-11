@@ -85,8 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Script du bouton me contacter de la page d'accueil ======================================================================
-    const contactLink = document.querySelector('.buttons-contact');
+    // Script du bouton a propos de la page d'accueil ======================================================================
+    const contactLink = document.querySelector('.buttons-apropos');
     const arrowIcon = contactLink.querySelector('.fa-arrow-right');
 
     contactLink.addEventListener('click', function (event) {
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             window.location.href = contactLink.getAttribute('href'); // Redirection vers la page de contact
             arrowIcon.style.transform = 'translateX(0px)';  // la fleche revient à sa position initiale
-        }, 300); // Temps pour l'animation (300ms)
+        }, 200); // Temps pour l'animation (300ms)
     });
 
 });
