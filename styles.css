@@ -123,7 +123,7 @@ nav a:hover {
     background-color: var(--main-color);
     border-radius: 50px;
     color: var(--second-color);
-    padding: 3px;
+    padding: 3px 8px;
     border: 3px solid var(--second-color);
 }
 
@@ -370,7 +370,12 @@ h3 {
 .contact-links a:hover {
     transform: scale(1.2);
 }
-
+.mail-link {
+    color: var(--second-color);
+    text-decoration: none;
+    transition: all 0.5s ease;
+    padding-top: 10px;
+}
 /* =================================== SECTION COMPETENCES ====================================================== */
 .skills {
     height: 100vh;
@@ -669,6 +674,11 @@ h3 {
 .tags p {
     margin: 0;
 }
+.projet-linkDIV {
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
 
 .projet-link {
     text-decoration: none;
@@ -677,9 +687,7 @@ h3 {
     border-radius: 16px;
     font-size: 1.2rem;
     padding: 10px 20px;
-    text-align: end;
     width: fit-content;
-    margin-left: auto;
     transition: all 0.5s ease;
     border: 2px solid transparent;
 }
@@ -694,6 +702,7 @@ h3 {
 .image-projet {
     flex: 1;
     height: 335px;
+    width: 0;
     margin-right: 20px;
     border-radius: 8px;
     border: 2px solid var(--second-color);
@@ -860,7 +869,10 @@ h3 {
         flex-direction: column;
     }
     .projet-container {
-        margin: 20px;
+        margin: 40px;
+    }
+    .projet-container h2 {
+        font-size: 1.5rem;
     }
     .image-projet {
         width: 100%; 
@@ -876,7 +888,10 @@ h3 {
     }
 
     .projet-link {
-        font-size: 1.2rem; 
+        font-size: 1rem; 
+    }
+    .projet-linkDIV {
+        justify-content: center;
     }
 }
 

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
     <link rel="stylesheet" href="styles.css">
     <style>
-         /* .maintenance {
+          .maintenance {
             position: fixed;
             top: 0;
             left: 0;
@@ -23,14 +23,14 @@
         .maintenance h1 {
             font-size: 3rem;
             color: rgb(255, 255, 255);
-        }  */
+        }  
     </style>
 </head>
 
 <body>
-     <!-- <div class="maintenance">
+      <div class="maintenance">
         <h1>Portfolio en cours de construction. Revenez bientôt ...</h1>
-    </div>  -->
+    </div> 
     
     <div class="swipe" id="swipe"></div>
 
@@ -44,7 +44,7 @@
             </button>
             <ul id="nav-links">
                 <li><a href="#" class="active">Accueil</a></li>
-                <li><a href="./projet.html">Projets <span class="numberprojet">10</span></a></li>
+                <li><a href="./projet.html">Projets <span class="numberprojet" id="numberprojet"></span></a></li>
                 <li><a href="#Competences">Compétences</a></li>
             </ul>
             <label for="toggle">
@@ -65,7 +65,6 @@
         </div>
     </header>
     <main>
-        <!-- TESTER LE WRAP POUR LA RESPONSIVE -->
         <section class="aboutme" id="aboutme">
             <div class="infoapropos">
                 <div class="text-container">
@@ -76,12 +75,11 @@
                         de programmation , je cherche aussi à acquérir une expérience pratique en tant que développeur
                         full stack.
                     </p>
-                    <!-- METTRE L4APARITION DU I AU HOVER -->
                     <a href="./fichiers/CV_Nicolas_Molduch.pdf" target="_blank" class="infoapropos-bouttons">Voir mon cv <i
                             class="fa-solid fa-up-right-from-square"></i></a>
                     <div class="contact-info">
                         <div class="contact-line">
-                            <p>Mail : nicolasmolduchpro@gmail.com</p>
+                            <a href="mailto:nicolasmolduchpro@gmail.com" class="mail-link">Mail : nicolasmolduchpro@gmail.com</a>
                             <div class="contact-links">
                                 <a href="https://www.linkedin.com/in/nicolas-molduch-devweb/" target="_blank" aria-label="lien linkedin"><i class="fa-brands fa-linkedin"></i></a>
                                 <a href="mailto:nicolasmolduchpro@gmail.com" aria-label="lien adresse-email"><i class="fa-solid fa-envelope"></i></a>
