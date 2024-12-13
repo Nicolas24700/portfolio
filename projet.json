@@ -1,63 +1,68 @@
 [
     {
-        "titre": "Golden Resort Hotel",
-        "date": "30/05/2024",
-        "languages": ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
-        "img-projet": "./profil default.png",
-        "description": "Dans le cadre de mon BUT MMI, j’ai développé Golden Resort Hotel, un site de réservation d’hôtels doté d’un moteur de recherche, d’un système de réservation avec confirmation par email,d’un calculateur de prix, d’un système d’avis et de tri des chambres.",
-        "competenceDev": " gestion des bases de données, création de systèmes interactifs (réservation, commentaires, notation), envoi automatisé d’emails.",
-        "realisation": "seul",
-        "contexte":"scolaire",
-        "lien": "https://resaweb.molduch.butmmi.o2switch.site/",
-        "github-link": "https://github.com/Nicolas24700/ResaWeb"
-    },
-    {
-        "titre": "Miniblog PHP",
-        "date": "30/11/2024",
-        "languages": ["PHP", "MySQL", "JavaScript"],
-        "img-projet": "./profil default.png",
-        "description": "Dans le cadre de mon BUT MMI, j’ai développé un miniblog en PHP avec une structure MVC, avec un panel admin qui permet aux administrateurs de publier des billets, d'ajouter une image à chaque publication, ainsi que de supprimer ou de modifier des utilisateurs, des posts et des commentaires. Les utilisateurs peuvent s'inscrire, se connecter, publier des commentaires et mettre à jour leur photo de profil. Le site intègre également une gestion des erreurs.",
-        "competenceDev": " La structure MVC en PHP, gestion de sessions et d'utilisateurs, gestion des erreurs, gestion des images, gestion des commentaires et la sécurisation des mot de passe avec le hashage.",
-        "realisation": "seul",
-        "contexte":"scolaire",
-        "lien": "https://miniblog.molduch.butmmi.o2switch.site/",
-        "github-link": "https://github.com/Nicolas24700/miniblog"
-    },
-    {
         "titre": "Gameviz Awards",
         "date": "12/12/2024",
         "languages": ["HTML", "CSS", "JavaScript","D3.js"],
-        "img-projet": "./profil default.png",
+        "img-projet": "./images/GamevizAwards.jpg",
         "description": "En groupe, nous avons développé ce site web visant à visualiser les données des meilleurs jeux de l'année à travers des graphiques réalisés avec D3.js, incluant leurs chiffres de ventes et une bande-annonce pour chaque jeu.",
         "competenceDev": " manipulation de données, création de visualisations interactives avec D3.js, création et gestion d'un SVG.",
         "realisation": "groupe",
         "contexte":"scolaire",
         "lien": "https://louisduhez.github.io/Gameviz-Award/",
-        "github-link": "https://github.com/LouisDuhez/Gameviz-Award"
+        "github-link": "https://github.com/LouisDuhez/Gameviz-Award",
+        "id_projet": "gameviz"
     },
     {
-        "titre": "Portrait-Chinois",
-        "date": "30/01/2024",
-        "languages": ["HTML", "CSS", "JavaScript"],
-        "img-projet": "./profil default.png",
-        "description": "Dans le cadre de mon BUT MMI en première année, j'ai eu comme premier projet web de faire un portrait chinois, où l'objectif était de se présenter en utilisant des images et des textes sous forme : « Si j'étais ..., je serais… »",
-        "competenceDev": "Réalisation d'un site web en utilisant HTML et CSS, ainsi que manipulation de fichiers JSON avec JavaScript.",
+        "titre": "Miniblog PHP",
+        "date": "30/11/2024",
+        "languages": ["PHP", "MySQL", "JavaScript"],
+        "img-projet": "./images/miniblog.jpg",
+        "description": "Dans le cadre de mon BUT MMI, j’ai développé un miniblog en PHP avec une structure MVC, avec un panel admin qui permet aux administrateurs de publier des billets, d'ajouter une image à chaque publication, ainsi que de supprimer ou de modifier des utilisateurs, des posts et des commentaires. Les utilisateurs peuvent s'inscrire, se connecter, publier des commentaires et mettre à jour leur photo de profil. Le site intègre également une gestion des erreurs.",
+        "competenceDev": " La structure MVC en PHP, gestion de sessions et d'utilisateurs, gestion des erreurs, gestion des images, gestion des commentaires et la sécurisation des mot de passe avec le hashage.",
         "realisation": "seul",
         "contexte":"scolaire",
-        "lien": "https://nicolas24700.github.io/portrait-chinois/",
-        "github-link": "https://github.com/Nicolas24700/portrait-chinois"
+        "lien": "https://miniblog.molduch.butmmi.o2switch.site/",
+        "github-link": "https://github.com/Nicolas24700/miniblog",
+        "id_projet": "miniblog"
+    },
+    {
+        "titre": "Golden Resort Hotel",
+        "date": "30/05/2024",
+        "languages": ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
+        "img-projet": "./images/resaweb.jpg",
+        "description": "Dans le cadre de mon BUT MMI, j’ai développé Golden Resort Hotel, un site de réservation d’hôtels doté d’un moteur de recherche, d’un système de réservation avec confirmation par email,d’un calculateur de prix, d’un système d’avis et de tri des chambres.",
+        "competenceDev": " gestion des bases de données, création de systèmes interactifs (réservation, commentaires, notation), envoi automatisé d’emails.",
+        "realisation": "seul",
+        "contexte":"scolaire",
+        "lien": "https://resaweb.molduch.butmmi.o2switch.site/",
+        "github-link": "https://github.com/Nicolas24700/ResaWeb",
+        "id_projet": "golden"
     },
     {
         "titre": "Booglaw",
         "date": "05/06/2024",
         "languages": ["Wordpress", "Figma"],
-        "img-projet": "./images/BOOGLAWFIGMA.jpg",
+        "img-projet": "./images/booglaw.jpg",
         "description": "Dans le cadre d'un projet citoyen, nous devions, en groupe, concevoir une campagne publicitaire pour une association existante ou en créer une nouvelle. Nous avons choisi de reprendre une association existante, Booglaw, un refuge pour animaux. Pour ce projet, nous avons développé un site WordPress en utilisant le plugin Kubio pour intégrer des animations.",
-        "competenceDev": "Création d'un site WordPress, utilisation du plugin Kubio pour les animations.",
+        "competenceDev": "Création d'un site WordPress, utilisation du plugin Kubio pour les animations, création d'une maquette sur Figma.",
         "realisation": "groupe",
         "contexte":"scolaire",
         "lien": "https://www.stanislas.butmmi.o2switch.site/booglaw/",
-        "github-link": "https://github.com/Nicolas24700/portrait-chinois"
+        "github-link": "https://github.com/Nicolas24700/portrait-chinois",
+        "id_projet": "booglaw"
+    },
+    {
+        "titre": "Portrait-Chinois",
+        "date": "30/01/2024",
+        "languages": ["HTML", "CSS", "JavaScript"],
+        "img-projet": "./images/portraitchinois.jpg",
+        "description": "Dans le cadre de mon BUT MMI en première année, j'ai eu comme premier projet web de faire un portrait chinois, où l'objectif était de se présenter en utilisant des images et des textes sous forme : « Si j'étais ..., je serais… »",
+        "competenceDev": "Réalisation d'un site web en utilisant HTML et CSS, ainsi que manipulation de fichiers JSON avec JavaScript.",
+        "realisation": "seul",
+        "contexte":"scolaire",
+        "lien": "https://nicolas24700.github.io/portrait-chinois/",
+        "github-link": "https://github.com/Nicolas24700/portrait-chinois",
+        "id_projet": "portraitchinois"
     }
 ]
 

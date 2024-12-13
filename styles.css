@@ -305,6 +305,7 @@ h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
     text-transform: uppercase;
+    color: var(--second-color);
 }
 
 .text-container p {
@@ -594,6 +595,11 @@ h3 {
     padding: 1px;
 }
 /* ================================== PAGE DES PROJETS ================================================== */
+.sectionDuprojet {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
 .h1-projets {
     margin-left: 30px;
     font-size: 2rem;
@@ -606,6 +612,7 @@ h3 {
 .container {
     display: flex;
     gap: 20px;
+    align-items: center;
 }
 
 .text-section {
@@ -700,16 +707,71 @@ h3 {
 }
 
 .image-projet {
-    flex: 1;
-    height: 335px;
-    width: 0;
+    height: 300px;
+    width: 100%;
     margin-right: 20px;
     border-radius: 8px;
-    border: 2px solid var(--second-color);
+    transition: all 0.5s ease;
+}
+.image-projet:hover {
+    transform: scale(0.98);
+}
+.containeraimg {
+    flex: 1;
 }
 
+/* =============================== SECTION MES PROJETS =================================================================== */
+.recent-projet {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.recent-projet-container {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    border: 2px solid var(--second-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px;
+}
+.recent-projet-container img {
+    border-radius: 8px;
+    height: 260px;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+.recent-projet-container img:hover {
+    transform: scale(0.95);
+}
+.lien-projet {
+    background-color: var(--second-color);
+    color: var(--main-color);
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    border: 2px solid transparent;
+}
+.lien-projet:hover {
+    transform: scale(1.03);
+    border: 2px solid var(--second-color);
+    background-color: var(--main-color);
+    color: var(--second-color);
+}
+.boiterecent-projet {
+    display: flex;
+    justify-content: center;
+}
 /* =============================== RESPONSIVE TABLETTE ====================================================================*/
 @media (min-width: 978px) and (max-width: 1144px) {
+    .sectionDuprojet {
+        height: auto;
+    }
     nav ul {
         gap: 20px;
     }
@@ -739,6 +801,9 @@ h3 {
 
 /* =============================== RESPONSIVE TELEPHONE =========================================================*/
 @media (max-width: 990px) {
+    .sectionDuprojet {
+        height: auto;
+    }
 
     /* barre de navigation */
     nav ul {
@@ -875,8 +940,7 @@ h3 {
         font-size: 1.5rem;
     }
     .image-projet {
-        width: 100%; 
-        max-height: 300px;
+        width: 100%;
     }
 
     .allprojets {
@@ -893,17 +957,38 @@ h3 {
     .projet-linkDIV {
         justify-content: center;
     }
+    /* Section témoignages */
+    .coms {
+        height: auto;
+    }
+
+        /* Page des recents projets */
+    .boiterecent-projet {
+        flex-wrap: wrap;
+    }
+    .recent-projet-container img {
+        height: 200px;
+    }
+    .recent-projet {
+        height: auto;
+    }
+
 }
 
 /* =============================== RESPONSIVE TELEPHONE SE =========================================================*/
 @media (max-width: 600px) {
-
+    .aboutme {
+        height: auto;
+    }
     .image-container img {
         height: 200px;
     }
 
     .skills {
         height: 100%;
+    }
+    .image-projet {
+        max-height: 200px;
     }
 
     /* ==== Section mon parcours==== */

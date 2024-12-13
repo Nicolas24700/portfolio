@@ -5,6 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
             updateProjectCount(data)
             generation(data);
             effectinclinaison();
+            generation2(data);
+
+            // permet de faire fonctionner le scroll vers un élément si l'URL contient un # par exemple : projet.html#projet1 car les éléments sont générés dynamiquement
+            if (window.location.hash){
+                document.querySelector(window.location.hash).scrollIntoView();
+            }
+
         });
     });
 
@@ -17,16 +24,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fonction qui génère les éléments HTML à partir des données JSON========================================
     function generation(data) {
         data.forEach(function (projet) {
-            var languages = projet["languages"]
+            let languages = projet["languages"]
                 // Transforme chaque langue en une chaîne HTML avec une div et un paragraphe
                 .map(lang => "<div class='tags'><p>" + lang + "</p></div>")
                 // Joint toutes les chaînes HTML en une seule chaîne
                 .join('');
             const projectHTML = `
+            <section class="sectionDuprojet" id="${projet["id_projet"]}">
             <div class="projet-container">
             <h2>${projet["titre"]}</h2>
             <div class="container">
-                <img src="${projet["img-projet"]}" alt="" class="image-projet">
+                <a href="${projet["lien"]}" target="_blank" class="containeraimg"><img src="${projet["img-projet"]}" alt="Lien du site ${projet["id_projet"]}" class="image-projet"></a>
                 <div class="text-section">
                     <p>Date : ${projet["date"]}</p>
                     <div class="language-tag">
@@ -45,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>
         </div>
+    </section>
         `;
 
             const projectContainer = document.querySelector('.allprojets');
@@ -56,40 +65,73 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Fonction qui génére les éléments HTML à partir des données JSON et les tris en fonction de leurs dates et affiche en 2=======================
+    function generation2(data) {
+        data.sort(function (a, b) {
+            // Convertir les dates en objets Date pour comparer
+            const dateA = new Date(a["date"].split('/').reverse().join('-')); // Convertir "23/02/2001" en "2001-02-23"
+            const dateB = new Date(b["date"].split('/').reverse().join('-'));
+            return dateB - dateA; // Tri décroissant
+        });
+        const recentProjects = data.slice(0, 2); // Prend les 2 premiers projets après tri
+
+        recentProjects.forEach(function (projet) {
+            let languages = projet["languages"]
+                .map(lang => "<div class='tags'><p>" + lang + "</p></div>")
+                .join('');
+            const projectHTML = `
+                <div class="recent-projet-container">
+                <h3>${projet["titre"]}</h3>
+                <a href="./projet.html#${projet["id_projet"]}"><img src="${projet["img-projet"]}" alt="image/lien vers le projet ${projet["id_projet"]}"></a>
+                <div class="language-tag">
+                    ${languages}
+                </div>
+                <a class="lien-projet" href="./projet.html#${projet["id_projet"]}">Voir le projet</a>
+                </div>
+            `;
+    
+            const projectContainer = document.querySelector('.boiterecent-projet');
+            if (projectContainer) {
+                projectContainer.innerHTML += projectHTML;
+            }
+        });
+    }
+
+
     // SCRIPT POUR L'inclinaison de la div projet ========================================================================
     function effectinclinaison() {
         const projetdiv = document.querySelectorAll('.projet-container');
-    
+
         projetdiv.forEach(div => {
             div.addEventListener('mousemove', (e) => {
                 // Récupère les coordonnées de la souris par rapport à la div
                 const rect = div.getBoundingClientRect();
                 const mouseX = e.clientX - rect.left;
                 const mouseY = e.clientY - rect.top;
-    
+
                 // Calcule le centre de la div
                 const centerX = rect.width / 2;
                 const centerY = rect.height / 2;
-    
+
                 // Calcule la différence entre la position de la souris et le centre de la div
                 const deltaX = (mouseX - centerX) / centerX;
                 const deltaY = (mouseY - centerY) / centerY;
-    
+
                 const maxTilt = 5; // L'angle maximum d'inclinaison
 
                 // Calcule l'angle d'inclinaison en fonction de la position de la souris
                 const tiltX = deltaY * maxTilt;
                 const tiltY = -deltaX * maxTilt;
-    
+
                 // Applique la transformation CSS à la div
                 div.style.transform = `perspective(500px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
             });
-             // Réinitialise la transformation lorsque la souris quitte la div
+            // Réinitialise la transformation lorsque la souris quitte la div
             div.addEventListener('mouseleave', () => {
                 div.style.transform = 'perspective(0px) rotateX(0deg) rotateY(0deg)';
             });
         });
-        }
+    }
 
     // Script de la barre de navigation =============================================================================
     const hamburger = document.getElementById('hamburger');
