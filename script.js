@@ -257,4 +257,30 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById("barreprogess").style.width = scrolled + "%";
     }
 
+    // ======================== Script pour les liens a en fonction de la section (au scroll) ===============================================
+    document.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('#nav-links a'); 
+        
+        let currentSectionId = '';
+    
+        // Détermine quelle section est visible dans la fenêtre
+        sections.forEach(section => {
+            // Récupère les dimensions de la section
+            const rect = section.getBoundingClientRect();
+            // Si la moitié de la section est visible alors on considère que c'est la section visible
+            if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                currentSectionId = section.id; // Identifiant de la section visible
+            }
+        });
+    
+        // Met à jour les liens actifs dans la navbar
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href.startsWith('#')) { // Vérifie si le lien est un lien interne
+                link.classList.toggle('active', href === `#${currentSectionId}`);
+            }
+        });
+    });
+
 });
