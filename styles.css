@@ -909,7 +909,7 @@ h3 {
 
     .image-container img {
         width: 250px;
-        height: 250px;
+        height: 300px;
     }
 
     .image-container {
@@ -993,9 +993,6 @@ h3 {
 @media (max-width: 600px) {
     .aboutme {
         height: auto;
-    }
-    .image-container img {
-        height: 200px;
     }
 
     .skills {
