@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
             generation2(data);
 
             // permet de faire fonctionner le scroll vers un élément si l'URL contient un # par exemple : projet.html#projet1 car les éléments sont générés dynamiquement
-            if (window.location.hash){
+            if (window.location.hash) {
                 document.querySelector(window.location.hash).scrollIntoView();
             }
 
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <a class="lien-projet" href="./projet.html#${projet["id_projet"]}">Voir le projet</a>
                 </div>
             `;
-    
+
             const projectContainer = document.querySelector('.boiterecent-projet');
             if (projectContainer) {
                 projectContainer.innerHTML += projectHTML;
@@ -239,6 +239,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         }
+    }
+
+    // ======================== Script pour la barre de progression ===============================================
+    window.onscroll = function () { 
+        progressbarre() 
+    };
+
+    function progressbarre() {
+        // Calcule la distance parcourue en défilant
+        let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        // Calcule la hauteur totale de défilement possible
+        let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        // Calcule le pourcentage de défilement
+        let scrolled = (winScroll / height) * 100;
+        // Ajuste la largeur de la barre de progression en fonction du pourcentage
+        document.getElementById("barreprogess").style.width = scrolled + "%";
     }
 
 });

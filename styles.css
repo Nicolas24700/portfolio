@@ -73,6 +73,20 @@ body {
 }
 
 /* ==================================== BARRE DE NAVIGATION ==================================== */
+.barredeprogression {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    background-color: white;
+}
+.progress-bar {
+    height: 8px;
+    background: gray;
+    width: 0%;
+}
+
 nav {
     display: flex;
     align-items: center;

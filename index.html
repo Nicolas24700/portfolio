@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
     <link rel="stylesheet" href="styles.css">
     <style>
-           .maintenance {
+        .maintenance {
             position: fixed;
             top: 0;
             left: 0;
@@ -20,19 +20,24 @@
             align-items: center;
             z-index: 9999;
         }
+
         .maintenance h1 {
             font-size: 3rem;
             color: rgb(255, 255, 255);
-        }  
+        }
     </style>
 </head>
 
 <body>
-       <div class="maintenance">
+    <div class="maintenance">
         <h1>Portfolio en cours de construction. Revenez bientôt ...</h1>
-    </div> 
-    
+    </div>
+
     <div class="swipe" id="swipe"></div>
+
+    <div class="barredeprogression">
+        <div class="progress-bar" id="barreprogess"></div>
+    </div>
 
     <header>
         <nav>
@@ -75,15 +80,19 @@
                         de programmation , je cherche aussi à acquérir une expérience pratique en tant que développeur
                         full stack.
                     </p>
-                    <a href="./fichiers/CV_Nicolas_Molduch.pdf" target="_blank" class="infoapropos-bouttons">Voir mon cv <i
-                            class="fa-solid fa-up-right-from-square"></i></a>
+                    <a href="./fichiers/CV_Nicolas_Molduch.pdf" target="_blank" class="infoapropos-bouttons">Voir mon cv
+                        <i class="fa-solid fa-up-right-from-square"></i></a>
                     <div class="contact-info">
                         <div class="contact-line">
-                            <a href="mailto:nicolasmolduchpro@gmail.com" class="mail-link">Mail : nicolasmolduchpro@gmail.com</a>
+                            <a href="mailto:nicolasmolduchpro@gmail.com" class="mail-link">Mail :
+                                nicolasmolduchpro@gmail.com</a>
                             <div class="contact-links">
-                                <a href="https://www.linkedin.com/in/nicolas-molduch-devweb/" target="_blank" aria-label="lien linkedin"><i class="fa-brands fa-linkedin"></i></a>
-                                <a href="mailto:nicolasmolduchpro@gmail.com" aria-label="lien adresse-email"><i class="fa-solid fa-envelope"></i></a>
-                                <a href="https://github.com/Nicolas24700" target="_blank" aria-label="lien github"><i class="fa-brands fa-square-github"></i></a>
+                                <a href="https://www.linkedin.com/in/nicolas-molduch-devweb/" target="_blank"
+                                    aria-label="lien linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="mailto:nicolasmolduchpro@gmail.com" aria-label="lien adresse-email"><i
+                                        class="fa-solid fa-envelope"></i></a>
+                                <a href="https://github.com/Nicolas24700" target="_blank" aria-label="lien github"><i
+                                        class="fa-brands fa-square-github"></i></a>
                             </div>
                         </div>
                     </div>
@@ -175,45 +184,52 @@
         <section class="parcours">
             <h2 class="h2-accueil">Mon Parcours</h2>
             <div class="timeline">
-              <div class="timeline-container timeline-left">
-                <div class="content">
-                  <h3>Brevet des collèges</h3>
-                  <p>Sept 2016 - Juil 2020</p>
-                  <p>Brevet des collèges obtenu avec Mention assez bien.</p>
+                <div class="timeline-container timeline-left">
+                    <div class="content">
+                        <h3>Brevet des collèges</h3>
+                        <p>Sept 2016 - Juil 2020</p>
+                        <p>Brevet des collèges obtenu avec Mention assez bien.</p>
+                    </div>
                 </div>
-              </div>
-              <div class="timeline-container timeline-right">
-                <div class="content">
-                  <h3>Baccalauréat STI2D</h3>
-                  <p>Sept 2020 - Juill 2023</p>
-                  <p>Diplôme obtenu avec mention bien, mettant en avant des compétences en innovation technologique,
-                    développement durable, et gestion de projet technique, grâce à une spécialisation en architecture et
-                    construction.
+                <div class="timeline-container timeline-right">
+                    <div class="content">
+                        <h3>Baccalauréat STI2D</h3>
+                        <p>Sept 2020 - Juill 2023</p>
+                        <p>Diplôme obtenu avec mention bien, mettant en avant des compétences en innovation
+                            technologique,
+                            développement durable, et gestion de projet technique, grâce à une spécialisation en
+                            architecture et
+                            construction.
+                    </div>
                 </div>
-              </div>
-              <div class="timeline-container timeline-left">
-                <div class="content">
-                  <h3>BUT MMI</h3>
-                  <p>Sept 2023 - Juil 2026</p>
-                  <p>Un cursus polyvalent qui m’a permis de développer des compétences en création numérique, développement web,
-                    et gestion de projet multimédia, renforçant ma capacité à concevoir des projets adaptées aux besoins
-                    actuels.</p>
+                <div class="timeline-container timeline-left">
+                    <div class="content">
+                        <h3>BUT MMI</h3>
+                        <p>Sept 2023 - Juil 2026</p>
+                        <p>Un cursus polyvalent qui m’a permis de développer des compétences en création numérique,
+                            développement web,
+                            et gestion de projet multimédia, renforçant ma capacité à concevoir des projets adaptées aux
+                            besoins
+                            actuels.</p>
+                    </div>
                 </div>
-              </div>
-              <div class="timeline-container timeline-right">
-                <div class="content">
-                  <h3>Certification Opquast</h3>
-                  <p>Mars 2025</p>
-                  <p>
-                    Je passerai la certification Opquast en mars 2025, qui attestera de la maîtrise des bonnes pratiques web
-                    essentielles. Cette certification, reconnue internationalement, évalue des compétences clés en qualité web,
-                    accessibilité, SEO, performance et sécurité, permettant de garantir une expérience utilisateur optimale et
-                    conforme aux standards du secteur.
-                  </p>
+                <div class="timeline-container timeline-right">
+                    <div class="content">
+                        <h3>Certification Opquast</h3>
+                        <p>Mars 2025</p>
+                        <p>
+                            Je passerai la certification Opquast en mars 2025, qui attestera de la maîtrise des bonnes
+                            pratiques web
+                            essentielles. Cette certification, reconnue internationalement, évalue des compétences clés
+                            en qualité web,
+                            accessibilité, SEO, performance et sécurité, permettant de garantir une expérience
+                            utilisateur optimale et
+                            conforme aux standards du secteur.
+                        </p>
+                    </div>
                 </div>
-              </div>
             </div>
-          </section>
+        </section>
         <section class="coms">
             <h2 class="h2-accueil">Les témoignages</h2>
             <div class="coms-container">
@@ -221,8 +237,10 @@
                     <div class="comment-text-container">
                         <div class="quote"><i class="fa-solid fa-quote-left"></i></div>
                         <div class="quote-comment">
-                            <p>Lorem ipsum dolor sit, amet <span class="fond-comment">consectetur</span> adipisicing elit. Provident eius molestias, ad
-                                ratione voluptatum <span class="fond-comment">laboriosam</span> quod sunt corporis nemo rem?</p>
+                            <p>Lorem ipsum dolor sit, amet <span class="fond-comment">consectetur</span> adipisicing
+                                elit. Provident eius molestias, ad
+                                ratione voluptatum <span class="fond-comment">laboriosam</span> quod sunt corporis nemo
+                                rem?</p>
                         </div>
                         <div class="quote-right"><i class="fa-solid fa-quote-right"></i></div>
                     </div>
@@ -234,7 +252,8 @@
                     <div class="comment-text-container">
                         <div class="quote"><i class="fa-solid fa-quote-left"></i></div>
                         <div class="quote-comment">
-                            <p>Lorem ipsum dolor sit, amet consectetur <span class="fond-comment">laboriosam</span> elit. Provident eius molestias, ad
+                            <p>Lorem ipsum dolor sit, amet consectetur <span class="fond-comment">laboriosam</span>
+                                elit. Provident eius molestias, ad
                                 ratione voluptatum laboriosam quod sunt corporis nemo rem?</p>
                         </div>
                         <div class="quote-right"><i class="fa-solid fa-quote-right"></i></div>
@@ -248,7 +267,8 @@
                         <div class="quote"><i class="fa-solid fa-quote-left"></i></div>
                         <div class="quote-comment">
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident eius molestias, ad
-                                ratione voluptatum laboriosam <span class="fond-comment">quod</span> sunt corporis nemo rem?</p>
+                                ratione voluptatum laboriosam <span class="fond-comment">quod</span> sunt corporis nemo
+                                rem?</p>
                         </div>
                         <div class="quote-right"><i class="fa-solid fa-quote-right"></i></div>
                     </div>
