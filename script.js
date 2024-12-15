@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 .map(lang => "<div class='tags'><p>" + lang + "</p></div>")
                 .join('');
             const projectHTML = `
-                <div class="recent-projet-container">
+                <div class="recent-projet-container div-animate">
                 <h3>${projet["titre"]}</h3>
                 <a href="./projet.html#${projet["id_projet"]}"><img src="${projet["img-projet"]}" alt="image/lien vers le projet ${projet["id_projet"]}"></a>
                 <div class="language-tag">
@@ -288,8 +288,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ======================== Script pour les animations d'apparition au scroll ===============================================
-    window.addEventListener('scroll', function () {
-        const elementaanim = document.querySelectorAll('.div-animate');
+    document.addEventListener('scroll', function () {
+        const elementaanim = document.querySelectorAll('.div-animate, .div-animate-right');
         // Récupère la position de l'élément par rapport à la fenêtre grâce à getBoundingClientRect()
         elementaanim.forEach(ele => {
             const rect = ele.getBoundingClientRect();
