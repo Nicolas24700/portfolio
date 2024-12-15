@@ -4,35 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Nicolas Molduch, Développeur Full-Stack">
     <title>Portfolio de Nicolas Molduch</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
     <link rel="stylesheet" href="styles.css">
-    <style>
-          .maintenance {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgb(0, 0, 0);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-
-        .maintenance h1 {
-            font-size: 3rem;
-            color: rgb(255, 255, 255);
-        }  
-    </style>
+    <link rel="icon" type="image/png" href="/images/noir.png" />
 </head>
 
 <body>
-     <div class="maintenance">
-        <h1>Portfolio en cours de construction. Revenez bientôt ...</h1>
-    </div> 
-
     <div class="swipe" id="swipe"></div>
 
     <div class="barredeprogression">
@@ -60,8 +39,7 @@
             </label>
         </nav>
         <div class="header-div" id="header-website">
-            <!-- animations du bas vers le bas ou ça place chaque lettre un par un avec ducoup une animation -->
-            <h1 class="h1-accueil">Nicolas Molduch</h1>
+            <h1 class="h1-accueil" id="animatedText"></h1>
             <h2 class="h2-accueil">Développeur Full-Stack</h2>
             <div class="header-buttons">
                 <a href="#aboutme" class="buttons-apropos">à propos <i class="fa-solid fa-arrow-right"></i></a>
@@ -70,7 +48,7 @@
         </div>
     </header>
     <main>
-        <section class="aboutme">
+        <section class="aboutme div-animate" id="aboutme">
             <div class="infoapropos">
                 <div class="text-container">
                     <h3>Développeur Full-Stack</h3>
@@ -102,12 +80,12 @@
                 </div>
             </div>
         </section>
-        <section class="recent-projet">
+        <section class="recent-projet div-animate">
             <h2 class="h2-accueil">Mes récents projets</h2>
             <div class="boiterecent-projet">
             </div>
         </section>
-        <section class="skills" id="Competences">
+        <section class="skills div-animate" id="Competences">
             <h2 class="h2-accueil">Mes compétences</h2>
             <div class="skills-container">
                 <h3>Front-End :</h3>
@@ -181,7 +159,7 @@
                 </div>
             </div>
         </section>
-        <section class="parcours">
+        <section class="parcours div-animate">
             <h2 class="h2-accueil">Mon Parcours</h2>
             <div class="timeline">
                 <div class="timeline-container timeline-left">
@@ -230,7 +208,7 @@
                 </div>
             </div>
         </section>
-        <section class="coms">
+        <section class="coms div-animate">
             <h2 class="h2-accueil">Les témoignages</h2>
             <div class="coms-container">
                 <div class="comment-container">
@@ -279,6 +257,15 @@
             </div>
         </section>
     </main>
+    <footer>
+        <p class="footerp">© 2024 - Molduch Nicolas | Développeur Full-Stack</p>
+        <a href="https://www.linkedin.com/in/nicolas-molduch-devweb/" target="_blank" aria-label="lien linkedin"><i
+                class="fa-brands fa-linkedin footerlinka"></i></a>
+        <a href="mailto:nicolasmolduchpro@gmail.com" aria-label="lien adresse-email"><i
+                class="fa-solid fa-envelope footerlinka"></i></a>
+        <a href="https://github.com/Nicolas24700" target="_blank" aria-label="lien github"><i
+                class="fa-brands fa-square-github footerlinka"></i></a>
+    </footer>
     <script src="./script.js"></script>
 </body>
 

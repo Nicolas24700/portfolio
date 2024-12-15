@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Joint toutes les chaînes HTML en une seule chaîne
                 .join('');
             const projectHTML = `
-            <section class="sectionDuprojet" id="${projet["id_projet"]}">
+            <section class="sectionDuprojet div-animate" id="${projet["id_projet"]}">
             <div class="projet-container">
             <h2>${projet["titre"]}</h2>
             <div class="container">
@@ -242,8 +242,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ======================== Script pour la barre de progression ===============================================
-    window.onscroll = function () { 
-        progressbarre() 
+    window.onscroll = function () {
+        progressbarre()
     };
 
     function progressbarre() {
@@ -260,10 +260,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // ======================== Script pour les liens a en fonction de la section (au scroll) ===============================================
     document.addEventListener('scroll', () => {
         const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('#nav-links a'); 
-        
+        const navLinks = document.querySelectorAll('#nav-links a');
+
         let currentSectionId = '';
-    
+
         // Détermine quelle section est visible dans la fenêtre
         sections.forEach(section => {
             // Récupère les dimensions de la section
@@ -273,14 +273,53 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentSectionId = section.id; // Identifiant de la section visible
             }
         });
-    
+
         // Met à jour les liens actifs dans la navbar
         navLinks.forEach(link => {
             const href = link.getAttribute('href');
-            if (href.startsWith('#')) { // Vérifie si le lien est un lien interne
-                link.classList.toggle('active', href === `#${currentSectionId}`);
+            if (href.startsWith('#')) { // Vérifie si le lien est un lien qui commence par #
+                if (currentSectionId === 'aboutme') {
+                    link.classList.toggle('active', href === "#");
+                } else {
+                    link.classList.toggle('active', href === `#${currentSectionId}`);
+                }
             }
         });
+    });
+
+    // ======================== Script pour les animations d'apparition au scroll ===============================================
+    window.addEventListener('scroll', function () {
+        const elementaanim = document.querySelectorAll('.div-animate');
+        // Récupère la position de l'élément par rapport à la fenêtre grâce à getBoundingClientRect()
+        elementaanim.forEach(ele => {
+            const rect = ele.getBoundingClientRect();
+            // Si la position de l'élément est inférieure à la hauteur de la fenêtre et que la position de l'élément est supérieure à 0 alors ajoute la classe 'visible'
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                ele.classList.add('visible');
+            }
+        });
+    });
+    // ======================== Script pour l'animation du h1  ===============================================
+    const text = "Nicolas Molduch";
+    const texteducontainer = document.getElementById("animatedText");
+
+    // Créer chaque lettre avec un délai différent
+    text.split("").forEach((char, index) => {
+      const span = document.createElement("span");
+      // Ajouter le caractère à la balise span
+      span.textContent = char;
+      span.className = "letter";
+      // Ajouter un délai d'animation différent pour chaque lettre
+      span.style.animationDelay = `${index * 0.2}s`;
+
+      // Ajouter un espace pour les espaces
+      if (char === " ") {
+        span.style.width = "20px"; // Ajuster la largeur pour l'espace visuel
+      }
+
+      if(texteducontainer) {
+        texteducontainer.appendChild(span);
+      }
     });
 
 });

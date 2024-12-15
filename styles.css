@@ -19,6 +19,78 @@ body {
     --main-color-rgb: 52, 152, 219;
 }
 
+/* =================== ANIMATION ============================================ */
+@keyframes slide-gauche {
+    0% {
+        transform: translate(-100%, 0%);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes slide-droite {
+    0% {
+        transform: translate(100%, 0%);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes slide-haut {
+    0% {
+        transform: translate(0%, 100%);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+
+.div-animate.visible .text-container,
+.div-animate.visible .boiterecent-projet,
+.div-animate.visible .timeline-left,
+.div-animate.visible .comment-container,
+.div-animate.visible .projet-container {
+    animation: slide-gauche 2s;
+    z-index: 2;
+}
+
+.div-animate.visible .image-container,
+.div-animate.visible .timeline-right,
+.div-animate.visible .icon-container {
+    animation: slide-droite 2s;
+    z-index: 2;
+}
+
+.div-animate.visible .comment-container:nth-child(2) {
+    animation: slide-haut 2s;
+}
+
+.div-animate.visible .comment-container:nth-child(3) {
+    animation: slide-droite 2s;
+}
+
+.letter {
+    display: inline-block;
+    opacity: 0;
+    animation: moveUp 0.6s ease-out forwards;
+  }
+
+  @keyframes moveUp {
+    0% {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 /* =================== SKIP LINK  ET SR-ONLY===============================================*/
 .skip-link {
     background-color: #fff;
@@ -77,10 +149,11 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 1000;
     width: 100%;
     background-color: white;
 }
+
 .progress-bar {
     height: 8px;
     background: gray;
@@ -243,6 +316,7 @@ input.switch {
     font-size: 4rem;
     margin-bottom: 1rem;
 }
+
 .h2-accueil {
     text-align: center;
     font-size: 2rem;
@@ -271,6 +345,7 @@ input.switch {
     border-radius: 16px;
     transition: all 0.5s ease;
 }
+
 .buttons-apropos:hover {
     color: var(--main-color);
     background-color: var(--second-color);
@@ -283,11 +358,11 @@ input.switch {
     bottom: 20px;
     animation: flecheanim 0.5s infinite alternate;
 }
- 
+
 .fa-arrow-right {
     transition: transform 0.3s ease;
     position: relative;
-} 
+}
 
 /* /* ==================================== SECTION A PROPOS DE MOI ======================================================= */
 .aboutme {
@@ -385,12 +460,14 @@ h3 {
 .contact-links a:hover {
     transform: scale(1.2);
 }
+
 .mail-link {
     color: var(--second-color);
     text-decoration: none;
     transition: all 0.5s ease;
     padding-top: 10px;
 }
+
 /* =================================== SECTION COMPETENCES ====================================================== */
 .skills {
     height: 100vh;
@@ -443,6 +520,7 @@ h3 {
     flex-direction: column;
     align-items: center;
 }
+
 /* =============================== SECTION MON PARCOURS ========================================================= */
 .timeline {
     position: relative;
@@ -535,7 +613,7 @@ h3 {
 
 .parcours {
     background-color: var(--main-color);
-} 
+}
 
 
 /* ================================ SECTION COMMENTAIRE ================================================================== */
@@ -608,12 +686,14 @@ h3 {
     color: var(--main-color);
     padding: 1px;
 }
+
 /* ================================== PAGE DES PROJETS ================================================== */
 .sectionDuprojet {
     height: 100vh;
     display: flex;
     align-items: center;
 }
+
 .h1-projets {
     margin-left: 30px;
     font-size: 2rem;
@@ -623,6 +703,7 @@ h3 {
 .header-projet {
     height: 20vh;
 }
+
 .container {
     display: flex;
     gap: 20px;
@@ -695,6 +776,7 @@ h3 {
 .tags p {
     margin: 0;
 }
+
 .projet-linkDIV {
     display: flex;
     justify-content: end;
@@ -727,9 +809,11 @@ h3 {
     border-radius: 8px;
     transition: all 0.5s ease;
 }
+
 .image-projet:hover {
     transform: scale(0.98);
 }
+
 .containeraimg {
     flex: 1;
 }
@@ -741,6 +825,7 @@ h3 {
     flex-direction: column;
     justify-content: center;
 }
+
 .recent-projet-container {
     display: flex;
     flex-direction: column;
@@ -750,15 +835,18 @@ h3 {
     padding: 20px;
     margin: 20px;
 }
+
 .recent-projet-container img {
     border-radius: 8px;
     height: 260px;
     width: 100%;
     transition: all 0.5s ease;
 }
+
 .recent-projet-container img:hover {
     transform: scale(0.95);
 }
+
 .lien-projet {
     background-color: var(--second-color);
     color: var(--main-color);
@@ -771,21 +859,49 @@ h3 {
     transition: all 0.5s ease;
     border: 2px solid transparent;
 }
+
 .lien-projet:hover {
     transform: scale(1.03);
     border: 2px solid var(--second-color);
     background-color: var(--main-color);
     color: var(--second-color);
 }
+
 .boiterecent-projet {
     display: flex;
     justify-content: center;
 }
+
+/* ================================ FOOTER ================================================================= */
+footer {
+    background-color: var(--second-color);
+    height: 15vh;
+    text-align: center;
+}
+
+.footerp {
+    padding: 10px;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.footerlinka {
+    font-size: 2rem;
+    color: var(--main-color);
+    margin: 0 10px;
+    transition: all 0.5s ease;
+}
+
+.footerlinka:hover {
+    transform: scale(1.2);
+}
+
 /* =============================== RESPONSIVE TABLETTE ====================================================================*/
 @media (min-width: 978px) and (max-width: 1144px) {
     .sectionDuprojet {
         height: auto;
     }
+
     nav ul {
         gap: 20px;
     }
@@ -815,6 +931,10 @@ h3 {
 
 /* =============================== RESPONSIVE TELEPHONE =========================================================*/
 @media (max-width: 990px) {
+    .aboutme {
+        height: auto;
+    }
+
     .sectionDuprojet {
         height: auto;
     }
@@ -943,22 +1063,26 @@ h3 {
     .skills {
         height: 100%;
     }
+
     /* ===== Page Projets ====== */
     .container {
         flex-direction: column;
     }
+
     .projet-container {
         margin: 40px;
     }
+
     .projet-container h2 {
         font-size: 1.5rem;
     }
+
     .image-projet {
         width: 100%;
     }
 
     .allprojets {
-        height: auto; 
+        height: auto;
     }
 
     .text-section {
@@ -966,23 +1090,27 @@ h3 {
     }
 
     .projet-link {
-        font-size: 1rem; 
+        font-size: 1rem;
     }
+
     .projet-linkDIV {
         justify-content: center;
     }
+
     /* Section témoignages */
     .coms {
         height: auto;
     }
 
-        /* Page des recents projets */
+    /* Page des recents projets */
     .boiterecent-projet {
         flex-wrap: wrap;
     }
+
     .recent-projet-container img {
         height: 200px;
     }
+
     .recent-projet {
         height: auto;
     }
@@ -998,6 +1126,7 @@ h3 {
     .skills {
         height: 100%;
     }
+
     .image-projet {
         max-height: 200px;
     }
