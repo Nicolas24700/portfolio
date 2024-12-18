@@ -11,7 +11,6 @@ html {
 body {
     margin: 0;
     background-color: var(--main-color);
-    overflow-x: hidden;
 }
 
 :root {
@@ -73,21 +72,20 @@ body {
     }
 }
 /* =================== ANIMATION ============================================ */
-.div-animate.visible,
-.div-animate-right.visible {
-    transform: translateX(0);
+.animate-on-scroll {
+    opacity: 0;
+  transform: translateX(10px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
-
-.div-animate {
-    transform: translateX(-1500px);
-    transition: transform 1.5s ease-out;
-    z-index: 2;
+.animate-on-scroll.is-visible,.animate-on-scroll-right.is-visible {
+    opacity: 1;
+  transform: translateY(0);
+  z-index: 2;
 }
-
-.div-animate-right {
-    transform: translateX(1000px);
-    transition: transform 1.5s ease-out;
-    z-index: 2;
+.animate-on-scroll-right {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
 .letter {
@@ -588,14 +586,14 @@ h3 {
 }
 
 .coms-container {
-    gap: 5%;
+    gap: 40px;
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
 }
 
 .comment-container {
-    max-width: 350px;
+    max-width: 400px;
     transition: all 0.5s ease;
 }
 
@@ -1118,5 +1116,8 @@ footer {
 
     .timeline-right {
         left: 0%;
+    }
+    .comment-text-container {
+        margin: 20px;
     }
 }

@@ -12,6 +12,32 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.querySelector(window.location.hash).scrollIntoView();
             }
 
+            // ======================== Script pour les animations d'apparition au scroll ===============================================
+            //fonction qui permet de s'executer directement apres la declaration
+            (function () {
+                const elements = document.querySelectorAll(".animate-on-scroll, .animate-on-scroll-right");
+                // Options pour l'observateur d'intersection
+                const options = {
+                    // threshold veut dire que l'élément doit être visible à 25% pour déclencher l'animation
+                    threshold: 0.5
+                };
+                // Création de l'observateur qui permet de déclencher l'animation
+                const observer = new IntersectionObserver(function (entries, observer) {
+                    entries.forEach(entry => {
+                        // Si l'entrée est en train d'intersecter avec la zone visible
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("is-visible");
+                            // Cesser d'observer cet élément
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, options);
+                // Observer chaque élément
+                elements.forEach(element => {
+                    observer.observe(element);
+                });
+            })();
+
         });
     });
 
@@ -30,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Joint toutes les chaînes HTML en une seule chaîne
                 .join('');
             const projectHTML = `
-            <section class="sectionDuprojet div-animate" id="${projet["id_projet"]}">
+            <section class="sectionDuprojet animate-on-scroll-right" id="${projet["id_projet"]}">
             <div class="projet-container">
             <h2>${projet["titre"]}</h2>
             <div class="container">
@@ -80,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 .map(lang => "<div class='tags'><p>" + lang + "</p></div>")
                 .join('');
             const projectHTML = `
-                <div class="recent-projet-container div-animate">
+                <div class="recent-projet-container">
                 <h3>${projet["titre"]}</h3>
                 <a href="./projet.html#${projet["id_projet"]}"><img src="${projet["img-projet"]}" alt="image/lien vers le projet ${projet["id_projet"]}"></a>
                 <div class="language-tag">
@@ -287,39 +313,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ======================== Script pour les animations d'apparition au scroll ===============================================
-    document.addEventListener('scroll', function () {
-        const elementaanim = document.querySelectorAll('.div-animate, .div-animate-right');
-        // Récupère la position de l'élément par rapport à la fenêtre grâce à getBoundingClientRect()
-        elementaanim.forEach(ele => {
-            const rect = ele.getBoundingClientRect();
-            // Si la position de l'élément est inférieure à la hauteur de la fenêtre et que la position de l'élément est supérieure à 0 alors ajoute la classe 'visible'
-            if (rect.top < window.innerHeight && rect.bottom > 0) {
-                ele.classList.add('visible');
-            }
-        });
-    });
     // ======================== Script pour l'animation du h1  ===============================================
     const text = "Nicolas Molduch";
     const texteducontainer = document.getElementById("animatedText");
 
     // Créer chaque lettre avec un délai différent
     text.split("").forEach((char, index) => {
-      const span = document.createElement("span");
-      // Ajouter le caractère à la balise span
-      span.textContent = char;
-      span.className = "letter";
-      // Ajouter un délai d'animation différent pour chaque lettre
-      span.style.animationDelay = `${index * 0.2}s`;
+        const span = document.createElement("span");
+        // Ajouter le caractère à la balise span
+        span.textContent = char;
+        span.className = "letter";
+        // Ajouter un délai d'animation différent pour chaque lettre
+        span.style.animationDelay = `${index * 0.2}s`;
 
-      // Ajouter un espace pour les espaces
-      if (char === " ") {
-        span.style.width = "20px"; // Ajuster la largeur pour l'espace visuel
-      }
+        // Ajouter un espace pour les espaces
+        if (char === " ") {
+            span.style.width = "20px"; // Ajuster la largeur pour l'espace visuel
+        }
 
-      if(texteducontainer) {
-        texteducontainer.appendChild(span);
-      }
+        if (texteducontainer) {
+            texteducontainer.appendChild(span);
+        }
     });
 
 });
