@@ -1,5 +1,18 @@
 [
     {
+        "titre": "ENT",
+        "date": "10/01/2025",
+        "languages": ["HTML", "CSS", "JavaScript","PHP", "MySQL"],
+        "img-projet": "./images/ent.jpg",
+        "description": "En groupe, nous avons fait une refonte de notre intranet etudiant afin d'améliorer son ergonomie, son design et en y ajoutant de nouvelles fonctionnalités telles qu'un système de justification d'absence, de notes etc.",
+        "competenceDev": " manipulation de données, gestion des absences et retards.",
+        "realisation": "groupe",
+        "contexte":"scolaire",
+        "lien": "https://molduch.butmmi.o2switch.site/ENT/",
+        "github-link": "https://github.com/BomberQLF/ENT",
+        "id_projet": "ent"
+    },
+    {
         "titre": "Gameviz Awards",
         "date": "12/12/2024",
         "languages": ["HTML", "CSS", "JavaScript","D3.js"],
