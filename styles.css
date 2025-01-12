@@ -369,7 +369,6 @@ h3 {
 .text-container p {
     font-size: 1rem;
     margin-top: 30px;
-    margin-bottom: 75px;
     line-height: 1.5;
     color: var(--second-color);
 }
@@ -989,7 +988,7 @@ footer {
 
     .text-container p {
         margin-top: 5px;
-        margin-bottom: 5px;
+        margin-bottom: 30px;
     }
 
     .infoapropos {
