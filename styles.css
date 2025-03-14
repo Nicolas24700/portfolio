@@ -399,6 +399,7 @@ h3 {
 .image-container {
     flex: 0.4;
     display: flex;
+    align-items: center;
 }
 
 .image-container img {
