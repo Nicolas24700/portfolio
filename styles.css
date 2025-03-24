@@ -459,6 +459,9 @@ h3 {
     width: 100%;
     display: flex;
     justify-content: space-around;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--second-color) var(--main-color);
 }
 
 .skills h3 {

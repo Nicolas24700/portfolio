@@ -1,4 +1,30 @@
-[
+[    
+    {
+    "titre": "Exposition 3D",
+    "date": "26/03/2025",
+    "languages": ["Threejs", "Blender","JavaScript", "CSS","HTML"],
+    "img-projet": "./images/Newton3D.jpg",
+    "description": "Pour le projet de réservation immersive sur Isaac Newton, j'ai conçu en bonus une exposition 3D en utilisant la librairie Three.js. Dans ce projet, j'ai modélisé la salle 3D, géré les lumières et les collisions.",
+    "competenceDev": "Modélisation 3D , Gestion des lumieres, Gestion des collisions",
+    "realisation": "seul",
+    "contexte":"Universitaire",
+    "lien": "https://expo3d.molduch.butmmi.o2switch.site/",
+    "github-link": "https://github.com/Nicolas24700/Isaac-newton-Expo3D",
+    "id_projet": "IsaacNewton3D"
+    },
+    {
+        "titre": "Isaac-Newton",
+        "date": "26/03/2025",
+        "languages": ["React", "Sass","JavaScript", "GSAP"],
+        "img-projet": "./images/IsaacNewton.jpg",
+        "description": "Dans le cadre de mon BUT MMI, j'ai dû concevoir un site de réservation immersive sur un scientifique, Isaac Newton, en utilisant la librairie React. Dans ce projet, je me suis occupé de faire le front-end du site.",
+        "competenceDev": "Manipulation de composant , GSAP, Traduction avec react-i18next",
+        "realisation": "groupe",
+        "contexte":"Universitaire",
+        "lien": "https://isaac-newton.alwaysdata.net/",
+        "github-link": "https://github.com/Nicolas24700/isaac-newton",
+        "id_projet": "IsaacNewton"
+    },
     {
         "titre": "Tank Wars",
         "date": "13/02/2025",
