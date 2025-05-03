@@ -26,6 +26,32 @@
         "id_projet": "IsaacNewton"
     },
     {
+        "titre": "Jeux du Pendu en React",
+        "date": "20/03/2025",
+        "languages": ["React", "CSS","Javascript"],
+        "img-projet": "./images/pendureact.jpg",
+        "description": "Dans le cadre de mon BUT MMI , j'ai développé un jeu du pendu en React. Dans ce projet, j'ai utilisé la librairie React pour créer le jeu et gérer les états.",
+        "competenceDev": "Manipulation de composant , Gestion des états avec useState et useEffect",
+        "realisation": "seul",
+        "contexte":"Universitaire",
+        "lien": "https://pendu-ivory.vercel.app/",
+        "github-link": "https://github.com/Nicolas24700/Pendu",
+        "id_projet": "PenduReact"
+    },
+    {
+        "titre": "Miniblog Doctrine",
+        "date": "13/03/2025",
+        "languages": ["PHP", "MySQL","POO","Doctrine"],
+        "img-projet": "./images/miniblog.jpg",
+        "description": "L'objectif de ce projet était de transformer notre ancien blog effectué en PHP avec une structure MVC en un blog utilisant Doctrine pour le développement Back.",
+        "competenceDev": "programmation orientée objet , Doctrine.",
+        "realisation": "seul",
+        "contexte":"Universitaire",
+        "lien": "https://github.com/Nicolas24700/Miniblog-Doctrine",
+        "github-link": "https://github.com/Nicolas24700/Miniblog-Doctrine",
+        "id_projet": "BlogDoctrine"
+    },
+    {
         "titre": "Tank Wars",
         "date": "13/02/2025",
         "languages": ["PHP", "MySQL","POO","JavaScript", "CSS"],

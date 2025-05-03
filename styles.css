@@ -658,6 +658,14 @@ h3 {
     color: var(--main-color);
     padding: 1px;
 }
+.certifopquast {
+    background-color: white;
+    border-radius: 8px;
+    width: 8rem;
+    display: flex;
+    margin: 10px;
+
+}
 
 /* ================================== PAGE DES PROJETS ================================================== */
 .sectionDuprojet {
