@@ -55,6 +55,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 .map(lang => "<div class='tags'><p>" + lang + "</p></div>")
                 // Joint toutes les chaînes HTML en une seule chaîne
                 .join('');
+
+            const githubLinkHTML = projet["github-link"]
+                ? `<a href="${projet["github-link"]}" target="_blank" class="projet-link" aria-label="lien github du projet"><i class="fa-brands fa-github"></i></a>`
+                : '';
+
             const projectHTML = `
             <section class="sectionDuprojet animate-on-scroll-right" id="${projet["id_projet"]}">
             <div class="projet-container">
@@ -73,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p><strong>Réalisation : </strong>${projet["realisation"]}</p>
                     <p><strong>Contexte :</strong> ${projet["contexte"]}</p>
                     <div class="projet-linkDIV">
-                        <a href="${projet["github-link"]}" target="_blank" class="projet-link" aria-label="lien github du projet"><i class="fa-brands fa-github"></i></a>
+                         ${githubLinkHTML}
                         <a href="${projet["lien"]}" target="_blank" class="projet-link">Lien du projet <i class="fa-solid fa-up-right-from-square"></i></a>
                     </div>
                 </div>
